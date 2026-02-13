@@ -14,7 +14,6 @@ export class SubmitFrom {
   @Prop({ required: true })
   phoneNumber: string;
 
-  // ✅ dropdown value as string
   @Prop({ required: true })
   projectType: string;
 

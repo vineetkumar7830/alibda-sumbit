@@ -7,7 +7,6 @@ import { SubmitFrom, SubmitFromSchema } from './entities/submitfrom.entity';
 
 @Module({
   imports: [
-    // ✅ This registers the model
     MongooseModule.forFeature([
       { name: SubmitFrom.name, schema: SubmitFromSchema },
     ]),
