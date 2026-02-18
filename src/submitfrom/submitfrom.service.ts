@@ -2,7 +2,6 @@ import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import * as nodemailer from 'nodemailer';
-
 import { SubmitFrom, SubmitFromDocument } from './entities/submitfrom.entity';
 import { CreateSubmitFromDto } from './dto/create-submitfrom.dto';
 
@@ -15,6 +14,7 @@ export class SubmitFromService {
 
   async create(createDto: CreateSubmitFromDto) {
     try {
+      // ✅ 1. Save form data in MongoDB
       const savedData = await this.submitFromModel.create(createDto);
 
       await this.sendEmail(createDto);
